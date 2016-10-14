@@ -6,11 +6,13 @@ import companies from './companies'
 
 class App extends Component {
   constructor() {
-    super();
-    this.changeCompany = this.changeCompany.bind(this);
+    super()
+    this.changeCompany = this.changeCompany.bind(this)
+    window.onhashchange = this.handleChangedCompany.bind(this)
+
     this.state = {
-      blankIndex: 1,
-      company: _.sample(companies)
+      blankIndex: 1,    
+      company: this.handleChangedCompany(true)
     }
   }
   render() {
@@ -24,7 +26,7 @@ class App extends Component {
           by
           <Blank ref={"blank-" + this.state.blankIndex++} value={generateName()}></Blank> 
         </h5>
-        <p style={{lineHeight: "40px"}}>
+        <p>
           Apple is one of the most cash-rich companies in the world. As of last quarter, they had $216 billion in liquid assets just waiting to be spent. While significant cash reserves provide security and stability, we believe Apple has been too conservative and should purchase
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name}></Blank>
           .
@@ -32,7 +34,7 @@ class App extends Component {
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name}></Blank>
           is a leader in the 
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.industry}></Blank>
-          industry and could provide Apple with the talent and intellectual property that would greatly benefit its attempt to grow Apple with its 
+          industry and could provide Apple with the talent and intellectual property that would greatly benefit Apple's attempt to grow its 
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.industry}></Blank>
           efforts.
           <br />
@@ -52,7 +54,7 @@ class App extends Component {
           and Apple CEO, Tim Cook, both declined to comment on the potential acquisition.
         </p>
         <div className="attribution">
-          <a onClick={this.changeCompany} className="button">Win Pulitzer &nbsp;<i className="fa fa-trophy"></i></a>
+          <a onClick={this.changeCompany} className="button">Generate new article</a>
           <p>A handy webapp designed to save tech journalists countless hours spent writing the same article every few weeks by doing it automatically.</p>
           <p>Made by <a target="_blank" href="http://ethanwutka.com/">Ethan Wutka</a> and <a target="_blank" href="http://timothybuck.me/">Timothy Buck</a> of <a target="_blank" href="http://nicer.io/">Nicer</a>.</p>
         </div>
@@ -60,36 +62,46 @@ class App extends Component {
     )
   }
   componentDidMount() {
-      this.staggerTextFade(1);
+      this.staggerTextFade(1)
   }
   componentDidUpdate() {
     _.each(this.refs, (blank) => {
       blank.setState({currentText: ""})
     })
-    this.staggerTextFade(1);
+    this.staggerTextFade(1)
   }
   staggerTextFade(i) {
     if (this.refs["blank-" + i]) {
       setTimeout(() => {
         this.refs["blank-" + i].fadeInText()
-        this.staggerTextFade(++i);
+        this.staggerTextFade(++i)
       }, 50)
     }
   }
   changeCompany() {
-    this.setState({
-      blankIndex: 1,
-      company: this.getNewCompany()
-    })
+    location.hash = this.getNewCompany() 
+  }
+  handleChangedCompany(isInitial) {
+    var company = _.where(companies, {name: location.hash.substring(1)})[0]
+    if (company) {
+      if (isInitial === true) {
+        return company
+      } else {
+        this.setState({
+          blankIndex: 1,
+          company 
+        })
+      }
+    }
   }
   getNewCompany() {
-    var newCompany = _.sample(companies);
+    var newCompany = _.sample(companies)
     if (newCompany.name !== this.state.company.name) {
-      return newCompany
+      return newCompany.name
     } else {
-      return this.getNewCompany();
+      return this.getNewCompany()
     }
   }
 }
 
-export default App;
+export default App

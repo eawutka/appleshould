@@ -3,36 +3,39 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: #333;
-  min-height: calc(100vh - 200px);
+  min-height: calc(~"100vh - 200px");
   padding-bottom: 200px;
   position: relative;
 }
+
 .main-container {
   max-width: 780px;
   margin: 0 auto;
   padding: 20px;
-}
-@media (min-width: 500px) {
-  .main-container {
+
+  @media (min-width: 500px) {
     padding: 100px 50px;
   }
-}
-.main-container > p {
-  line-height: 30px;
-}
-@media (min-width: 500px) {
-  .main-container > p {
-    line-height: 40px;
+
+  > p {
+    line-height: 30px;
+
+    @media (min-width: 500px) {
+      line-height: 40px;
+    }
   }
 }
+
 .blank {
   background-color: #ccc;
   padding: 5px 10px;
   margin: 0 5px;
 }
+
 br + .blank {
   margin-left: 0;
 }
+
 @media (min-width: 700px) {
   .attribution {
     max-width: 630px;
@@ -42,15 +45,18 @@ br + .blank {
     left: 0;
     right: 0;
     bottom: 50px;
-    margin: auto;
+    margin: auto;  
   }
 }
+
 .attribution a {
   color: #888;
+
+  &:hover {
+    color: #333;
+  }  
 }
-.attribution a:hover {
-  color: #333;
-}
+
 .button {
   margin-top: 50px;
   display: inline-block;
@@ -59,10 +65,12 @@ br + .blank {
   border: 1px solid #ccc;
   padding: 8px 10px;
   cursor: pointer;
-}
-.button:hover {
-  background-color: #eee;
-}
-.button:active {
-  background-color: #ddd;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &:active {
+    background-color: #ddd;
+  }
 }

@@ -8,13 +8,8 @@ class Blank extends Component {
     }
   }
   render() {
-    var blankStyle = {
-      backgroundColor: "#ccc",
-      padding: "5px 10px",
-      margin: "0 5px"
-    }
     return (
-      <span style={blankStyle}>{this.state.currentText}</span>
+      <span className="blank">{this.state.currentText}</span>
     );
   }
   fadeInText() {
