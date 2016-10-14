@@ -51,7 +51,7 @@ br + .blank {
 .attribution a:hover {
   color: #333;
 }
-.button {
+.attribution .button {
   margin-top: 50px;
   display: inline-block;
   color: #555;
@@ -60,9 +60,9 @@ br + .blank {
   padding: 8px 10px;
   cursor: pointer;
 }
-.button:hover {
+.attribution .button:hover {
   background-color: #eee;
 }
-.button:active {
+.attribution .button:active {
   background-color: #ddd;
 }

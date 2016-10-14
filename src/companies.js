@@ -84,7 +84,7 @@ const companies = [
         value: 2.9
     },
     {
-        name: "Pied Piper",
+        name: "Pied-Piper",
         CEO: "Richard Hendricks",
         industry: "middle-out compression",
         value: .25
