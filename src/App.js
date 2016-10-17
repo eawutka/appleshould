@@ -23,39 +23,39 @@ class App extends Component {
     return (
       <div className="main-container">
         <h1>
-          Apple should buy
+          <span>Apple should buy</span>
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank> 
         </h1>
         <h5>
-          by
+          <span>by</span>
           <Blank ref={"blank-" + this.state.blankIndex++} value={generateName()}></Blank> 
         </h5>
         <p>
-          Apple is one of the most cash-rich companies in the world. As of last quarter, they had $216 billion in liquid assets just waiting to be spent. While significant cash reserves provide security and stability, we believe Apple has been too conservative and should purchase
+          <span>Apple is one of the most cash-rich companies in the world. As of last quarter, they had $216 billion in liquid assets just waiting to be spent. While significant cash reserves provide security and stability, we believe Apple has been too conservative and should purchase</span>
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank>
-          .
+          <span>.</span>
           <br />
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank>
-          is a leader in the 
+          <span>is a leader in the</span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.industry}></Blank>
-          industry and could provide Apple with the talent and intellectual property that would greatly benefit Apple's attempt to grow its 
+          <span>industry and could provide Apple with the talent and intellectual property that would greatly benefit Apple's attempt to grow its</span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.industry}></Blank>
-          efforts.
+          <span>efforts.</span>
           <br />
-          Apple could spend 
+          <span>Apple could spend </span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={`$${this.state.company.value} billion`}></Blank>
-          on 
+          <span>on</span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank>.
-          and still have 
+          <span>and still have</span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={`$${216 - this.state.company.value} billion`}></Blank>
-          in cash reserves.
+          <span>in cash reserves.</span>
           <br />
-          Only time will tell whether Apple will follow through with this acquisition. Pundits often suggest Apple should make acquisitions that it fails to follow through on.
+          <span>Only time will tell whether Apple will follow through with this acquisition. Pundits often suggest Apple should make acquisitions that it fails to follow through on.</span>
           <br />
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.CEO}></Blank>
-          , CEO of
+          <span>, CEO of</span>
           <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')} ></Blank>
-          and Apple CEO, Tim Cook, both declined to comment on the potential acquisition.
+          <span>and Apple CEO, Tim Cook, both declined to comment on the potential acquisition.</span>
         </p>
         <div className="attribution">
           <a onClick={this.changeCompany} className="button">Generate new article</a>
