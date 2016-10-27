@@ -49,7 +49,7 @@ const companies = [
     },
     {
         name: "Nicer",
-        CEO: "Ethan Wutka",
+        CEO: "Aeryk Payne",
         industry: "Apple parody site",
         value: 0
     },
