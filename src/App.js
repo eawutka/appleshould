@@ -45,7 +45,7 @@ class App extends Component {
           <span>Apple could spend </span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={`$${this.state.company.value} billion`}></Blank>
           <span>on</span> 
-          <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank>.
+          <Blank ref={"blank-" + this.state.blankIndex++} value={this.state.company.name.replace(/-/g, ' ')}></Blank>
           <span>and still have</span> 
           <Blank ref={"blank-" + this.state.blankIndex++} value={`$${216 - this.state.company.value} billion`}></Blank>
           <span>in cash reserves.</span>
