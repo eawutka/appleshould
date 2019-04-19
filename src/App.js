@@ -60,7 +60,7 @@ class App extends Component {
         <div className="attribution">
           <a onClick={this.changeCompany} className="button">Generate new article</a>
           <p>A parody webapp designed to save tech journalists countless hours spent writing the same article every few weeks by doing it automatically.</p>
-          <p>Made by <a target="_blank" href="http://ethanwutka.com/">Ethan Wutka</a> and <a target="_blank" href="http://timothybuck.me/">Timothy Buck</a> of <a target="_blank" href="http://nicer.io/">Nicer</a>.</p>
+          <p>Made by <a target="_blank" href="http://ethanwutka.com/">Ethan Wutka</a> and <a target="_blank" href="http://timothybuck.me/">Timothy Buck</a>.</p>
         </div>
       </div>
     )
